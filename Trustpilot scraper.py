@@ -35,7 +35,7 @@ df = pd.DataFrame(columns=[
 
 url='https://uk.trustpilot.com/review/'+website_to_scrape+'?page=1'  
 browser.get(url)
-page_num = browser.find_element_by_css_selector("a[name='pagination-button-last']").text
+page_num = int(browser.find_element_by_css_selector("a[name='pagination-button-last']").text)
 
 for page in range(1,page_num): 
     
